@@ -12,74 +12,78 @@ body {
   justify-content: center;
   background-color: #ccc;
 }
+
 main {
   max-width: 1150px;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 150px;
+  padding: 20px;
 }
-.titulo{
+
+/* Responsividade para títulos */
+.titulo {
   margin-bottom: 85px;
-  margin-left: 420px;
+  text-align: center;
 }
+
+/* Ajuste de layout dos elementos principais */
 .resume {
   display: flex;
   padding: 20px;
-  gap: 250px;
+  gap: 20px; /* Ajuste o gap para ser menor em telas pequenas */
   width: 100%;
   justify-content: center;
   flex-wrap: wrap;
-  font-size:20px;
+  font-size: 20px;
 }
 
+/* Estilo dos cards */
 .resume > div {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 5px #ccc;
   border-radius: 10px;
-  padding: 30px;
+  padding: 20px;
   color: #fff;
   width: 200px;
   height: 100px;
 }
-.green{
-  background-color: rgb(112, 173, 112);
 
+/* Cores dos cards */
+.green {
+  background-color: rgb(112, 173, 112);
 }
-.red{
+
+.red {
   background-color: rgb(212, 81, 81);
 }
-.blue{
+
+.blue {
   background-color: rgb(87, 87, 209);
 }
+
 .newItem {
   display: flex;
   gap: 20px;
   align-items: end;
   width: 100%;
-  justify-content: center
-  
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.divDesc, .divType, .divAmount {
+
+.divDesc,
+.divType,
+.divAmount {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-size: 20px;
   border-radius: 10px;
 }
-#desc{
-  border-radius: 5px;
-  border-color: #fff;
-}
-#amount{
-  border-radius: 5px;
-  border-color: #fff;
-}
-#type{
-  border-radius: 5px;
-  border-color: #fff;
-}
+
+/* Botão */
 .newItem > button {
   background-color: #2C73D2;
   color: white;
@@ -88,23 +92,19 @@ main {
   border-radius: 5px;
   cursor: pointer;
   height: 34px;
-  font-size:20px;
-  border-radius: 5px;
+  font-size: 20px;
 }
 
-input, select {
-  padding: 5px;
-}
-
+/* Tabela */
 .divTable {
   width: 100%;
   display: flex;
   justify-content: center;
-  font-size:20px;
+  font-size: 18px;
 }
 
 table {
-  width: 98%;
+  width: 100%;
   padding: 20px 0;
   border-radius: 5px;
 }
@@ -144,4 +144,68 @@ i {
 .columnType {
   width: 80px;
   text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .titulo {
+    margin-left: 0;
+    font-size: 24px;
+  }
+
+  .resume {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .resume > div {
+    width: 150px;
+    padding: 15px;
+  }
+
+  .divDesc,
+  .divType,
+  .divAmount {
+    font-size: 16px;
+  }
+
+  .newItem {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divTable {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 20px;
+  }
+
+  .resume {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .resume > div {
+    width: 100%;
+  }
+
+  .divTable {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .columnAmount {
+    width: auto;
+  }
+
+  .columnType {
+    width: auto;
+  }
 }
